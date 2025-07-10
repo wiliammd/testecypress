@@ -1,0 +1,38 @@
+header {
+    display: flex;
+
+    background-color: #ec0000;
+}
+
+header nav {
+    padding: 5px 8px;
+
+    display: flex;
+    gap: 12px;
+
+    width: 100%;
+}
+
+header nav a {
+    text-decoration: none;
+    
+    color: white;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header button {
+    color: white;
+    background-color: transparent;
+
+    padding: 0 10px;
+
+    border: none;
+}
+
+header button:hover {
+    cursor: pointer;
+    background-color: #e26363b0;
+}

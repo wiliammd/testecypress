@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk - Login</title>
+    <link rel="stylesheet" href="../style/card.css">
+    <link rel="stylesheet" href="../style/form.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/modal.css">
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/usersCard.js"></script>
+</head>
+
+<body onload="showCards()">
+    <header>
+        <nav id="navbar">
+            <a href="#">Users</a>
+            <a href="./ticket.html">Tickets</a>
+        </nav>
+        <button onclick="logout()">Logout</button>
+    </header>
+    
+    <div class="filterContainer">
+        <input type="search" placeholder="Buscar usuario" onkeyup="filterCards(event)">
+    </div>
+
+    <div id="user-card-container"></div>
+
+    <div id="modal" style="display: none;">
+        <form class="form">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div>
+                <label for="name">
+                    <input name="name" id="name" type="text" placeholder="Name">
+                </label>
+                <label for="email">
+                    <input name="email" id="email" type="email" placeholder="E-mail">
+                </label>
+
+                <button id="modal-button" > Criar </button>
+            </div>
+        </form>
+    </div>
+    <button onclick="triggerModalCreateUser(event)" id="addButton"> <img src="../images/add.png" alt="add icon"> </button>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e9f1f4;
+    height: 100%;
+    width: 100%;
+}
+
+.addButton,
+#addButton {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 100%;
+    border: none;
+
+    background-color: #00ba00;
+
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
+
+.addButton:hover,
+#addButton:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+.addButton img,
+#addButton img {
+    width: 20px;
+    height: 20px;
+}
+
+.filterContainer {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 4px 8px #ccc;
+}
+
+.filterContainer input[type="search"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.filterContainer select {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filterContainer select::selection {
+    color: #ccc;
+}

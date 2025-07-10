@@ -1,0 +1,27 @@
+[
+  {
+    "id": 2,
+    "name": "Gilberto Gil",
+    "email": "gil.gil@example.com"
+  },
+  {
+    "id": 3,
+    "name": "João Gomes",
+    "email": "joaogomes@yahoo.com"
+  },
+  {
+    "id": 4,
+    "name": "Maria Betanea",
+    "email": "mariabetanea@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "Caetano Veloso",
+    "email": "caetano.veloso@outlook.com"
+  },
+  {
+    "id": 5,
+    "name": "Gustavo Machado",
+    "email": "gustavo@machado.com"
+  }
+]

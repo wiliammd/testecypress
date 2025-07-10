@@ -1,0 +1,38 @@
+[
+  {
+    "id": 82,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "DoePasword123"
+  },
+  {
+    "id": 2,
+    "name": "Gregori nunes",
+    "email": "greg@nunes.com",
+    "password": "1234"
+  },
+  {
+    "id": 3,
+    "name": "Eduardo Cunha",
+    "email": "edu@cunha.com",
+    "password": "1234"
+  },
+  {
+    "id": 4,
+    "name": "Gregori Da Silva Nunes",
+    "email": "n453798@pagonxt.com",
+    "password": "asdasd"
+  },
+  {
+    "id": 5,
+    "name": "Ming Mong",
+    "email": "asd@asd",
+    "password": "asd123"
+  },
+  {
+    "id": 6,
+    "name": "Teste",
+    "email": "teste@teste.com",
+    "password": "senha"
+  }
+]

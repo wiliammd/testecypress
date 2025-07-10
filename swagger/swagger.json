@@ -1,0 +1,354 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Helpdesk API",
+        "version": "1.0.0",
+        "description": "API for managing users and technical support tickets."
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Local Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Endpoints related to users"
+        },
+        {
+            "name": "Tickets",
+            "description": "Endpoints related to support tickets"
+        },
+        {
+            "name": "Login",
+            "description": "Endpoints related to Login "
+        }
+    ],
+    "paths": {
+        "/register": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Creates a new user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "name": "John Doe",
+                                "email": "john.doe@example.com",
+                                "password": "DoePasword123"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created successfully."
+                    },
+                    "400": {
+                        "description": "Error in request, invalid data."
+                    },
+                    "409": {
+                        "description": "User already exists."
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Logged in successfully",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "email": "john.doe@example.com",
+                                "password": "DoePasword123"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Logged in successfully."
+                    },
+                    "400": {
+                        "description": "Error in request, invalid data."
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Logged out successfully",
+                "responses": {
+                    "201": {
+                        "description": "Logged out successfully."
+                    },
+                    "400": {
+                        "description": "Error in request, invalid data."
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Lists all users",
+                "responses": {
+                    "200": {
+                        "description": "List of users returned successfully.",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "id": 1,
+                                        "name": "John Doe",
+                                        "email": "john.doe@example.com"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Creates a new user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "name": "John Doe",
+                                "email": "john.doe@example.com"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created successfully."
+                    },
+                    "400": {
+                        "description": "Error in request, invalid data."
+                    },
+                    "409": {
+                        "description": "User already exists."
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Fetches a user by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User found."
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Updates a user",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "name": "Jane Doe",
+                                "email": "jane.doe@example.com"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User updated successfully."
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Deletes a user",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User deleted successfully."
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            }
+        },
+        "/tickets": {
+            "post": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Creates a new ticket",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "userId": 1,
+                                "description": "My internet is not working."
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Ticket created successfully."
+                    },
+                    "400": {
+                        "description": "Error in request, invalid data."
+                    }
+                }
+            }
+        },
+        "/tickets/{id}": {
+            "get": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Fetches a ticket by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ticket found."
+                    },
+                    "404": {
+                        "description": "Ticket not found."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Deletes a ticket",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ticket deleted successfully."
+                    },
+                    "404": {
+                        "description": "Ticket not found."
+                    }
+                }
+            }
+        },
+        "/tickets/{id}/status": {
+            "put": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Updates the status of a ticket",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "status": "In Progress"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ticket status updated successfully."
+                    },
+                    "404": {
+                        "description": "Ticket not found."
+                    }
+                }
+            }
+        }
+    }
+}

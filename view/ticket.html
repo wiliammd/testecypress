@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk - Login</title>
+    <link rel="stylesheet" href="../style/card.css">
+    <link rel="stylesheet" href="../style/form.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/modal.css">
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/ticketsCard.js"></script>
+</head>
+
+<body onload="showCards()">
+    <header>
+        <nav>
+            <a href="./user.html">Users</a>
+            <a href="#">Tickets</a>
+        </nav>
+
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <div class="filterContainer">
+        <select onchange="filterCards(event)">
+            <option value="" selected>--STATUS--</option>
+            <option value="Open">Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+
+    <div class="card-container"></div>
+
+    <div class="modal" style="display: none;">
+        <form>
+            <span onclick="closeModal()">&times;</span>
+            <div class="input-container">
+                <label for="name">
+                    <input type="email" placeholder="E-mail">
+                </label>
+                <label for="description">
+                    <input type="text" placeholder="Description">
+                </label>
+
+                <button onclick="createTicket(event)"> Criar </button>
+            </div>
+        </form>
+    </div>
+    <button onclick="triggerModal()" class="addButton"> <img src="../images/add.png" alt="add icon"> </button>
+</body>
+
+</html>

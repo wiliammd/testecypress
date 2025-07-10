@@ -1,0 +1,100 @@
+.card-container,
+body>div {
+    width: 100%;
+    height: 100%;
+
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
+    justify-items: center;
+}
+
+.card-container .card,
+body>div .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 8px;
+
+    background-color: rgba(255, 255, 255, 0.815);
+
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #ccc;
+}
+
+.card-container .card .info,
+body>div .card .info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.card-container .card .info .lower,
+body>div .card .info .lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card-container .card .info .lower span,
+body>div .card .info .lower span {
+    font-size: 8px;
+    color: #000000ba;
+}
+
+.card-container .card .actions,
+body>div .card .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+}
+
+.card-container .card .actions button,
+body>div .card .actions button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+
+    background-color: transparent;
+
+    border-radius: 100%;
+    border: none;
+}
+
+
+.card-container .card .actions button,
+body>div .card .actions button {
+    background-color: #ffc72e;
+}
+
+.card-container .card .actions button + button,
+body>div .card .actions button + button{
+    background-color: #ff2147;
+}
+
+.card-container .card .actions button:hover,
+body>div .card .actions button:hover {
+    cursor: pointer;
+
+    box-shadow: 1px 1px 5px #ccc,
+        1px 1px 5px #ccc;
+}
+
+.card-container .card .actions button img,
+body>div .card .actions button img {
+    width: 13px;
+    height: 13px;
+}
